@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import mcproto.protos.update_pb2 as update__pb2
+from . import update_pb2
 
 GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
@@ -36,38 +36,38 @@ class UpdateServiceStub(object):
         """
         self.GetFileTree = channel.unary_unary(
                 '/launcher.UpdateService/GetFileTree',
-                request_serializer=update__pb2.FileTreeRequest.SerializeToString,
-                response_deserializer=update__pb2.FileTreeResponse.FromString,
+                request_serializer=update_pb2.FileTreeRequest.SerializeToString,
+                response_deserializer=update_pb2.FileTreeResponse.FromString,
                 _registered_method=True)
         self.DownloadFiles = channel.unary_stream(
                 '/launcher.UpdateService/DownloadFiles',
-                request_serializer=update__pb2.DownloadRequest.SerializeToString,
-                response_deserializer=update__pb2.FileChunk.FromString,
+                request_serializer=update_pb2.DownloadRequest.SerializeToString,
+                response_deserializer=update_pb2.FileChunk.FromString,
                 _registered_method=True)
         self.GetAssetFileTree = channel.unary_unary(
                 '/launcher.UpdateService/GetAssetFileTree',
-                request_serializer=update__pb2.AssetFileTreeRequest.SerializeToString,
-                response_deserializer=update__pb2.FileTreeResponse.FromString,
+                request_serializer=update_pb2.AssetFileTreeRequest.SerializeToString,
+                response_deserializer=update_pb2.FileTreeResponse.FromString,
                 _registered_method=True)
         self.DownloadAssetFiles = channel.unary_stream(
                 '/launcher.UpdateService/DownloadAssetFiles',
-                request_serializer=update__pb2.AssetDownloadRequest.SerializeToString,
-                response_deserializer=update__pb2.FileChunk.FromString,
+                request_serializer=update_pb2.AssetDownloadRequest.SerializeToString,
+                response_deserializer=update_pb2.FileChunk.FromString,
                 _registered_method=True)
         self.GetJavaFileTree = channel.unary_unary(
                 '/launcher.UpdateService/GetJavaFileTree',
-                request_serializer=update__pb2.JavaFileTreeRequest.SerializeToString,
-                response_deserializer=update__pb2.FileTreeResponse.FromString,
+                request_serializer=update_pb2.JavaFileTreeRequest.SerializeToString,
+                response_deserializer=update_pb2.FileTreeResponse.FromString,
                 _registered_method=True)
         self.DownloadJavaFiles = channel.unary_stream(
                 '/launcher.UpdateService/DownloadJavaFiles',
-                request_serializer=update__pb2.JavaDownloadRequest.SerializeToString,
-                response_deserializer=update__pb2.FileChunk.FromString,
+                request_serializer=update_pb2.JavaDownloadRequest.SerializeToString,
+                response_deserializer=update_pb2.FileChunk.FromString,
                 _registered_method=True)
         self.GetFallbackNode = channel.unary_unary(
                 '/launcher.UpdateService/GetFallbackNode',
-                request_serializer=update__pb2.GetFallbackNodeRequest.SerializeToString,
-                response_deserializer=update__pb2.GetFallbackNodeResponse.FromString,
+                request_serializer=update_pb2.GetFallbackNodeRequest.SerializeToString,
+                response_deserializer=update_pb2.GetFallbackNodeResponse.FromString,
                 _registered_method=True)
 
 
@@ -121,38 +121,38 @@ def add_UpdateServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetFileTree': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFileTree,
-                    request_deserializer=update__pb2.FileTreeRequest.FromString,
-                    response_serializer=update__pb2.FileTreeResponse.SerializeToString,
+                    request_deserializer=update_pb2.FileTreeRequest.FromString,
+                    response_serializer=update_pb2.FileTreeResponse.SerializeToString,
             ),
             'DownloadFiles': grpc.unary_stream_rpc_method_handler(
                     servicer.DownloadFiles,
-                    request_deserializer=update__pb2.DownloadRequest.FromString,
-                    response_serializer=update__pb2.FileChunk.SerializeToString,
+                    request_deserializer=update_pb2.DownloadRequest.FromString,
+                    response_serializer=update_pb2.FileChunk.SerializeToString,
             ),
             'GetAssetFileTree': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAssetFileTree,
-                    request_deserializer=update__pb2.AssetFileTreeRequest.FromString,
-                    response_serializer=update__pb2.FileTreeResponse.SerializeToString,
+                    request_deserializer=update_pb2.AssetFileTreeRequest.FromString,
+                    response_serializer=update_pb2.FileTreeResponse.SerializeToString,
             ),
             'DownloadAssetFiles': grpc.unary_stream_rpc_method_handler(
                     servicer.DownloadAssetFiles,
-                    request_deserializer=update__pb2.AssetDownloadRequest.FromString,
-                    response_serializer=update__pb2.FileChunk.SerializeToString,
+                    request_deserializer=update_pb2.AssetDownloadRequest.FromString,
+                    response_serializer=update_pb2.FileChunk.SerializeToString,
             ),
             'GetJavaFileTree': grpc.unary_unary_rpc_method_handler(
                     servicer.GetJavaFileTree,
-                    request_deserializer=update__pb2.JavaFileTreeRequest.FromString,
-                    response_serializer=update__pb2.FileTreeResponse.SerializeToString,
+                    request_deserializer=update_pb2.JavaFileTreeRequest.FromString,
+                    response_serializer=update_pb2.FileTreeResponse.SerializeToString,
             ),
             'DownloadJavaFiles': grpc.unary_stream_rpc_method_handler(
                     servicer.DownloadJavaFiles,
-                    request_deserializer=update__pb2.JavaDownloadRequest.FromString,
-                    response_serializer=update__pb2.FileChunk.SerializeToString,
+                    request_deserializer=update_pb2.JavaDownloadRequest.FromString,
+                    response_serializer=update_pb2.FileChunk.SerializeToString,
             ),
             'GetFallbackNode': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFallbackNode,
-                    request_deserializer=update__pb2.GetFallbackNodeRequest.FromString,
-                    response_serializer=update__pb2.GetFallbackNodeResponse.SerializeToString,
+                    request_deserializer=update_pb2.GetFallbackNodeRequest.FromString,
+                    response_serializer=update_pb2.GetFallbackNodeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -180,8 +180,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/GetFileTree',
-            update__pb2.FileTreeRequest.SerializeToString,
-            update__pb2.FileTreeResponse.FromString,
+            update_pb2.FileTreeRequest.SerializeToString,
+            update_pb2.FileTreeResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -207,8 +207,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/DownloadFiles',
-            update__pb2.DownloadRequest.SerializeToString,
-            update__pb2.FileChunk.FromString,
+            update_pb2.DownloadRequest.SerializeToString,
+            update_pb2.FileChunk.FromString,
             options,
             channel_credentials,
             insecure,
@@ -234,8 +234,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/GetAssetFileTree',
-            update__pb2.AssetFileTreeRequest.SerializeToString,
-            update__pb2.FileTreeResponse.FromString,
+            update_pb2.AssetFileTreeRequest.SerializeToString,
+            update_pb2.FileTreeResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -261,8 +261,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/DownloadAssetFiles',
-            update__pb2.AssetDownloadRequest.SerializeToString,
-            update__pb2.FileChunk.FromString,
+            update_pb2.AssetDownloadRequest.SerializeToString,
+            update_pb2.FileChunk.FromString,
             options,
             channel_credentials,
             insecure,
@@ -288,8 +288,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/GetJavaFileTree',
-            update__pb2.JavaFileTreeRequest.SerializeToString,
-            update__pb2.FileTreeResponse.FromString,
+            update_pb2.JavaFileTreeRequest.SerializeToString,
+            update_pb2.FileTreeResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -315,8 +315,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/DownloadJavaFiles',
-            update__pb2.JavaDownloadRequest.SerializeToString,
-            update__pb2.FileChunk.FromString,
+            update_pb2.JavaDownloadRequest.SerializeToString,
+            update_pb2.FileChunk.FromString,
             options,
             channel_credentials,
             insecure,
@@ -342,8 +342,8 @@ class UpdateService(object):
             request,
             target,
             '/launcher.UpdateService/GetFallbackNode',
-            update__pb2.GetFallbackNodeRequest.SerializeToString,
-            update__pb2.GetFallbackNodeResponse.FromString,
+            update_pb2.GetFallbackNodeRequest.SerializeToString,
+            update_pb2.GetFallbackNodeResponse.FromString,
             options,
             channel_credentials,
             insecure,

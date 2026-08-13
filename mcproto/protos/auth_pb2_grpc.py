@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import mcproto.protos.auth_pb2 as auth__pb2
+from . import auth_pb2
 
 GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
@@ -36,18 +36,18 @@ class AuthServiceStub(object):
         """
         self.Login = channel.unary_unary(
                 '/launcher.AuthService/Login',
-                request_serializer=auth__pb2.LoginRequest.SerializeToString,
-                response_deserializer=auth__pb2.LoginResponse.FromString,
+                request_serializer=auth_pb2.LoginRequest.SerializeToString,
+                response_deserializer=auth_pb2.LoginResponse.FromString,
                 _registered_method=True)
         self.Logout = channel.unary_unary(
                 '/launcher.AuthService/Logout',
-                request_serializer=auth__pb2.LogoutRequest.SerializeToString,
-                response_deserializer=auth__pb2.LogoutResponse.FromString,
+                request_serializer=auth_pb2.LogoutRequest.SerializeToString,
+                response_deserializer=auth_pb2.LogoutResponse.FromString,
                 _registered_method=True)
         self.GetProfile = channel.unary_unary(
                 '/launcher.AuthService/GetProfile',
-                request_serializer=auth__pb2.GetProfileRequest.SerializeToString,
-                response_deserializer=auth__pb2.GetProfileResponse.FromString,
+                request_serializer=auth_pb2.GetProfileRequest.SerializeToString,
+                response_deserializer=auth_pb2.GetProfileResponse.FromString,
                 _registered_method=True)
 
 
@@ -77,18 +77,18 @@ def add_AuthServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Login': grpc.unary_unary_rpc_method_handler(
                     servicer.Login,
-                    request_deserializer=auth__pb2.LoginRequest.FromString,
-                    response_serializer=auth__pb2.LoginResponse.SerializeToString,
+                    request_deserializer=auth_pb2.LoginRequest.FromString,
+                    response_serializer=auth_pb2.LoginResponse.SerializeToString,
             ),
             'Logout': grpc.unary_unary_rpc_method_handler(
                     servicer.Logout,
-                    request_deserializer=auth__pb2.LogoutRequest.FromString,
-                    response_serializer=auth__pb2.LogoutResponse.SerializeToString,
+                    request_deserializer=auth_pb2.LogoutRequest.FromString,
+                    response_serializer=auth_pb2.LogoutResponse.SerializeToString,
             ),
             'GetProfile': grpc.unary_unary_rpc_method_handler(
                     servicer.GetProfile,
-                    request_deserializer=auth__pb2.GetProfileRequest.FromString,
-                    response_serializer=auth__pb2.GetProfileResponse.SerializeToString,
+                    request_deserializer=auth_pb2.GetProfileRequest.FromString,
+                    response_serializer=auth_pb2.GetProfileResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -116,8 +116,8 @@ class AuthService(object):
             request,
             target,
             '/launcher.AuthService/Login',
-            auth__pb2.LoginRequest.SerializeToString,
-            auth__pb2.LoginResponse.FromString,
+            auth_pb2.LoginRequest.SerializeToString,
+            auth_pb2.LoginResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -143,8 +143,8 @@ class AuthService(object):
             request,
             target,
             '/launcher.AuthService/Logout',
-            auth__pb2.LogoutRequest.SerializeToString,
-            auth__pb2.LogoutResponse.FromString,
+            auth_pb2.LogoutRequest.SerializeToString,
+            auth_pb2.LogoutResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -170,8 +170,8 @@ class AuthService(object):
             request,
             target,
             '/launcher.AuthService/GetProfile',
-            auth__pb2.GetProfileRequest.SerializeToString,
-            auth__pb2.GetProfileResponse.FromString,
+            auth_pb2.GetProfileRequest.SerializeToString,
+            auth_pb2.GetProfileResponse.FromString,
             options,
             channel_credentials,
             insecure,

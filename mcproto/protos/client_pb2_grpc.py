@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import mcproto.protos.client_pb2 as client__pb2
+from . import client_pb2
 
 GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
@@ -36,13 +36,13 @@ class ClientServiceStub(object):
         """
         self.GetClients = channel.unary_unary(
                 '/launcher.ClientService/GetClients',
-                request_serializer=client__pb2.GetClientsRequest.SerializeToString,
-                response_deserializer=client__pb2.GetClientsResponse.FromString,
+                request_serializer=client_pb2.GetClientsRequest.SerializeToString,
+                response_deserializer=client_pb2.GetClientsResponse.FromString,
                 _registered_method=True)
         self.GetClient = channel.unary_unary(
                 '/launcher.ClientService/GetClient',
-                request_serializer=client__pb2.GetClientRequest.SerializeToString,
-                response_deserializer=client__pb2.GetClientResponse.FromString,
+                request_serializer=client_pb2.GetClientRequest.SerializeToString,
+                response_deserializer=client_pb2.GetClientResponse.FromString,
                 _registered_method=True)
 
 
@@ -66,13 +66,13 @@ def add_ClientServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetClients': grpc.unary_unary_rpc_method_handler(
                     servicer.GetClients,
-                    request_deserializer=client__pb2.GetClientsRequest.FromString,
-                    response_serializer=client__pb2.GetClientsResponse.SerializeToString,
+                    request_deserializer=client_pb2.GetClientsRequest.FromString,
+                    response_serializer=client_pb2.GetClientsResponse.SerializeToString,
             ),
             'GetClient': grpc.unary_unary_rpc_method_handler(
                     servicer.GetClient,
-                    request_deserializer=client__pb2.GetClientRequest.FromString,
-                    response_serializer=client__pb2.GetClientResponse.SerializeToString,
+                    request_deserializer=client_pb2.GetClientRequest.FromString,
+                    response_serializer=client_pb2.GetClientResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -100,8 +100,8 @@ class ClientService(object):
             request,
             target,
             '/launcher.ClientService/GetClients',
-            client__pb2.GetClientsRequest.SerializeToString,
-            client__pb2.GetClientsResponse.FromString,
+            client_pb2.GetClientsRequest.SerializeToString,
+            client_pb2.GetClientsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -127,8 +127,8 @@ class ClientService(object):
             request,
             target,
             '/launcher.ClientService/GetClient',
-            client__pb2.GetClientRequest.SerializeToString,
-            client__pb2.GetClientResponse.FromString,
+            client_pb2.GetClientRequest.SerializeToString,
+            client_pb2.GetClientResponse.FromString,
             options,
             channel_credentials,
             insecure,

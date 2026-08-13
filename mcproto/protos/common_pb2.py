@@ -22,8 +22,6 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-
-
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x63ommon.proto\x12\x08launcher\"A\n\rPlayerProfile\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08skin_url\x18\x03 \x01(\t*g\n\rIntegrityMode\x12\x1e\n\x1aINTEGRITY_MODE_UNSPECIFIED\x10\x00\x12\x1b\n\x17INTEGRITY_MODE_STANDARD\x10\x01\x12\x19\n\x15INTEGRITY_MODE_BYPASS\x10\x02*\xbe\x01\n\x08Platform\x12\x18\n\x14PLATFORM_UNSPECIFIED\x10\x00\x12\x18\n\x14PLATFORM_WINDOWS_X64\x10\x01\x12\x1a\n\x16PLATFORM_WINDOWS_ARM64\x10\x02\x12\x16\n\x12PLATFORM_LINUX_X64\x10\x03\x12\x18\n\x14PLATFORM_LINUX_ARM64\x10\x04\x12\x16\n\x12PLATFORM_MACOS_X64\x10\x05\x12\x18\n\x14PLATFORM_MACOS_ARM64\x10\x06\x42\x1f\n\x1bnet.mcsgroup.launcher.protoP\x01\x62\x06proto3')
 
 _globals = globals()
