@@ -1,5 +1,5 @@
 import grpc
-from mcproto.mcproto.proto import (
+from mcproto.proto import (
     auth_pb2_grpc,
     client_pb2_grpc,
     update_pb2_grpc

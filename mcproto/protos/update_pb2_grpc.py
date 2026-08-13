@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import mcproto.mcproto.protos.update_pb2 as update__pb2
+import mcproto.protos.update_pb2 as update__pb2
 
 GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__

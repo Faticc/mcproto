@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import mcproto.mcproto.protos.common_pb2 as common__pb2
+import mcproto.protos.common_pb2 as common__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nauth.proto\x12\x08launcher\x1a\x0c\x63ommon.proto\"\x13\n\x11GetProfileRequest\">\n\x12GetProfileResponse\x12(\n\x07profile\x18\x01 \x01(\x0b\x32\x17.launcher.PlayerProfile\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"t\n\rLoginResponse\x12)\n\x0csession_data\x18\x03 \x01(\x0b\x32\x11.launcher.SessionH\x00\x12.\n\x0cmfa_required\x18\x04 \x01(\x0b\x32\x16.launcher.MfaChallengeH\x00\x42\x08\n\x06result\"?\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x07profile\x18\x02 \x01(\x0b\x32\x17.launcher.PlayerProfile\"\x0e\n\x0cMfaChallenge\"\x0f\n\rLogoutRequest\"\x10\n\x0eLogoutResponse2\xcd\x01\n\x0b\x41uthService\x12\x38\n\x05Login\x12\x16.launcher.LoginRequest\x1a\x17.launcher.LoginResponse\x12;\n\x06Logout\x12\x17.launcher.LogoutRequest\x1a\x18.launcher.LogoutResponse\x12G\n\nGetProfile\x12\x1b.launcher.GetProfileRequest\x1a\x1c.launcher.GetProfileResponseB\x1f\n\x1bnet.mcsgroup.launcher.protoP\x01\x62\x06proto3')
