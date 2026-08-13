@@ -1,5 +1,5 @@
 import grpc
-from proto import (
+from .proto import (
     auth_pb2_grpc,
     client_pb2_grpc,
     update_pb2_grpc
