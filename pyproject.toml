@@ -14,5 +14,9 @@ dependencies = [
     "protobuf>=5.0.0"
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcproto*"]
+
 [project.urls]
 Homepage = "https://github.com/Faticc/mcproto"
